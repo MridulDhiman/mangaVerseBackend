@@ -1,0 +1,70 @@
+GET http://localhost:4000/products/create
+
+
+###
+
+GET http://localhost:4000/products
+
+
+###
+
+PATCH http://localhost:4000/products/65a3a4c7e6f7db87090c405a/cartFlag
+
+###
+
+GET http://localhost:4000/products/gomu-gomu-no-hoodie
+
+### 
+
+GET http://localhost:4000/cart
+
+###
+
+POST http://localhost:4000/cart
+Content-Type: application/json
+
+{
+    "product" : "65a3a4c7e6f7db87090c405a",
+    "quantity" : 8
+}
+
+
+### 
+
+PATCH http://localhost:4000/cart/65a40e841cec3cd7efa70e4e
+Content-Type: application/json
+
+{
+    "quantity": 6
+}
+
+
+###
+
+DELETE http://localhost:4000/cart
+
+###
+
+DELETE http://localhost:4000/cart/65a555a3d3bb5d4fba76f2e9/p/65a3a4c7e6f7db87090c405a
+
+###
+
+PUT http://localhost:4000/cart
+Content-Type: application/json
+
+{
+    "items" : [
+        {
+            "id": "65a55613d3bb5d4fba76f2fa",
+            "quantity": "2"
+        }, 
+        {
+           "id": "65a5566dd3bb5d4fba76f310",
+           "quantity": "4"
+        }, 
+        {
+          "id" : "65a556e7d3bb5d4fba76f323",
+          "quantity" : "3"
+        }
+    ]
+}
