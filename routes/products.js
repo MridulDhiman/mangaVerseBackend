@@ -242,6 +242,36 @@ router.patch("/:id/cartFlag", async (req,res)=> {
   } catch (error) {
     res.json({success: false})
   }
+});
+
+
+router.post("/filter", async (req,res) => {
+
+  let {searchStr} = req.body;
+  // console.log(searchStr);
+
+  try {
+    
+    if(!searchStr) {
+      throw new Error("search string not found...");
+    }
+
+
+searchStr = searchStr.trim();
+
+const products = await Product.find({
+  $or : [
+    {"name" : {$regex: new RegExp(searchStr, "i") }}, 
+    {"productType": {$regex: new RegExp(searchStr, "i")}},
+    {"animeType": {$regex: new RegExp(searchStr, "i")}}
+  ]
+});
+
+res.json({products: products});
+
+  } catch (error) {
+    res.json({message: error.message})
+  }
 })
 
 export default router;
