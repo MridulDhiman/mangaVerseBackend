@@ -55,15 +55,11 @@ Content-Type: application/json
 {
     "items" : [
         {
-            "id": "65a55613d3bb5d4fba76f2fa",
-            "quantity": "2"
+            "id": "65ef4b46c3c37bbd9aa86233",
+            "quantity": "5"
         }, 
         {
-           "id": "65a5566dd3bb5d4fba76f310",
-           "quantity": "4"
-        }, 
-        {
-          "id" : "65a556e7d3bb5d4fba76f323",
+          "id" : "65effddbeead2df375dbafa7",
           "quantity" : "3"
         }
     ]

@@ -75,8 +75,8 @@ router.patch("/:id", async (req, res) => {
 // quantity of many
 router.put("/", async (req, res) => {
 
-  const data = req.body;
-
+  const data = req.body.items;
+console.log(data);
  
 
   if (data.length > 0) {
